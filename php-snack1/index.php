@@ -27,8 +27,8 @@
       $visiting_team_score => 60,
     ],
     [
-      $home_team => 'Los Angeles Lakers',
-      $visiting_team => 'Golden State Warriors',
+      $home_team => 'Chicago Bulls',
+      $visiting_team => 'Milwaukee Bucks',
       $home_team_score => 80,
       $visiting_team_score => 65,
     ],
@@ -42,7 +42,7 @@
       $home_team => 'Houston Rockets',
       $visiting_team => 'Miami Heat',
       $home_team_score => 72,
-      $visiting_team_score => 32,
+      $visiting_team_score => 34,
     ],
     [
       $home_team => 'Los Angeles Clippers',
@@ -93,6 +93,16 @@
               <?php
                 for($i = 0; $i < count($matches); $i++) {
                   var_dump($matches[$i]);
+                };
+              ?>
+            </p>
+            <p>
+              <?php
+                for($i = 0; $i < count($matches); $i++) {
+                  var_dump($matches[$i][$home_team]);
+                  var_dump($matches[$i][$visiting_team]);
+                  var_dump($matches[$i][$home_team_score]);
+                  var_dump($matches[$i][$visiting_team_score]);
                 };
               ?>
             </p>
