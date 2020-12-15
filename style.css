@@ -40,8 +40,13 @@ h3 {
 
 p {
   font-size: 25px;
-  padding: 30px 0;
   font-weight: 600;
+  padding: 20px 0;
+}
+
+span {
+  color: #DF0101;
+  font-weight: 700;
 }
 
 #page-wrapper {

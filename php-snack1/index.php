@@ -20,35 +20,35 @@
   $home_team_score = 'home team score';
   $visiting_team_score = 'visiting team score';
   $matches = [
-    'first match' => [
+    [
       $home_team => 'Los Angeles Lakers',
       $visiting_team => 'Golden State Warriors',
       $home_team_score => 50,
       $visiting_team_score => 60,
     ],
-    'second match' => [
+    [
       $home_team => 'Los Angeles Lakers',
       $visiting_team => 'Golden State Warriors',
       $home_team_score => 80,
       $visiting_team_score => 65,
     ],
-    'third match' => [
+    [
       $home_team => 'Toronto Raptors',
       $visiting_team => 'Boston Celtics',
       $home_team_score => 40,
       $visiting_team_score => 58,
     ],
-    'fourth match' => [
+    [
       $home_team => 'Houston Rockets',
       $visiting_team => 'Miami Heat',
       $home_team_score => 72,
       $visiting_team_score => 32,
     ],
-    'fifth match' => [
+    [
       $home_team => 'Los Angeles Clippers',
       $visiting_team => 'Denver Nuggets',
-      $home_team_score => 72,
-      $visiting_team_score => 32,
+      $home_team_score => 48,
+      $visiting_team_score => 66,
     ],
   ];
  ?>
@@ -81,8 +81,21 @@
         <div class="row">
           <div id="results">
             <h3>Results</h3>
-            <p>some text</p>
-            <!-- Here the results will be printed -->
+            <p>
+              Number of matches:
+              <span>
+                <?php
+                  echo count($matches);
+                ?>
+              </span>
+            </p>
+            <p>
+              <?php
+                for($i = 0; $i < count($matches); $i++) {
+                  var_dump($matches[$i]);
+                };
+              ?>
+            </p>
           </div>
         </div>
       </div>  <!-- End of container -->
