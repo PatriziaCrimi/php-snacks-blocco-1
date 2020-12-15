@@ -50,7 +50,7 @@
             <h3>Results</h3>
             <p>
               User:
-              <span class="user-name">
+              <span class="bold">
                 <?php
                 echo $name;
                 ?>
@@ -64,17 +64,25 @@
                 ?>
               </span>
             </p>
+            <p>
+              E-mail:
+              <span class="bold">
+                <?php
+                echo $mail;
+                ?>
+              </span>
+            </p>
             <div class="results-box">
-              <p>
+              <span>
                 <?php
                 // Checking that 'name' is longer than 'min_length' characters
-                if(strlen($name) > $min_length) {
+                if(strlen($name) > $min_length && strpos($mail, '.') !== false && strpos($mail, '@') !== false) {
                   echo('Accesso riuscito');
                 } else {
                   echo('Accesso negato');
                 }
                 ?>
-              </p>
+              </span>
             </div>
           </div>
         </div>

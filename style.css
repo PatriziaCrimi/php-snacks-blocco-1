@@ -45,9 +45,10 @@ p {
 }
 
 span {
-  color: #DF0101;
   font-weight: 700;
   font-size: 22px;
+  color: #DF0101;
+  text-shadow: 2px 2px black;
 }
 
 .container {
@@ -86,6 +87,12 @@ h1::after {
   font-size: 40px;
 }
 
+#results span.bold {
+  font-weight: 800;
+  color: black;
+  text-shadow: none;
+}
+
 #results .results-box {
   margin-top: 30px;
   padding: 20px 0;
@@ -94,9 +101,9 @@ h1::after {
   box-shadow: inset 0px 0px 1px 1px #D8CEF6;
 }
 
-#results span.user-name {
-  font-weight: 800;
-  color: black;
+#results .results-box span {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 /* ------------------- MEDIA QUERY ------------------- */
