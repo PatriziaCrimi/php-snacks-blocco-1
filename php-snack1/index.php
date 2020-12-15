@@ -15,6 +15,42 @@
 
   $title = 'PHP Snacks';
   $subtitle = 'Basket matches';
+  $home_team = 'home team';
+  $visiting_team = 'visiting team';
+  $home_team_score = 'home team score';
+  $visiting_team_score = 'visiting team score';
+  $matches = [
+    'first match' => [
+      $home_team => 'Los Angeles Lakers',
+      $visiting_team => 'Golden State Warriors',
+      $home_team_score => 50,
+      $visiting_team_score => 60,
+    ],
+    'second match' => [
+      $home_team => 'Los Angeles Lakers',
+      $visiting_team => 'Golden State Warriors',
+      $home_team_score => 80,
+      $visiting_team_score => 65,
+    ],
+    'third match' => [
+      $home_team => 'Toronto Raptors',
+      $visiting_team => 'Boston Celtics',
+      $home_team_score => 40,
+      $visiting_team_score => 58,
+    ],
+    'fourth match' => [
+      $home_team => 'Houston Rockets',
+      $visiting_team => 'Miami Heat',
+      $home_team_score => 72,
+      $visiting_team_score => 32,
+    ],
+    'fifth match' => [
+      $home_team => 'Los Angeles Clippers',
+      $visiting_team => 'Denver Nuggets',
+      $home_team_score => 72,
+      $visiting_team_score => 32,
+    ],
+  ];
  ?>
 
 <!-- ............................. HTML ............................. -->
