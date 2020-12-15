@@ -86,12 +86,17 @@ h1::after {
   font-size: 40px;
 }
 
-.matches-list {
+#results .results-box {
   margin-top: 30px;
   padding: 20px 0;
   border: 4px solid #4B088A;
   border-radius: 5px;
   box-shadow: inset 0px 0px 1px 1px #D8CEF6;
+}
+
+#results span.user-name {
+  font-weight: 800;
+  color: black;
 }
 
 /* ------------------- MEDIA QUERY ------------------- */

@@ -3,7 +3,7 @@
   /* ASSIGNMENT
   Passare 3 parametri GET: name, mail e age
   e verificare (cercando nella documentazione i metodi che non conosciamo) che:
-    1. name sia più lungo di 3 caratteri,
+    1. name sia più lungo di 3 caratteri
     2. mail contenga un punto e una chiocciola
     3. age sia un numero.
   Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”.
@@ -11,6 +11,13 @@
 
   $title = 'PHP Snacks';
   $subtitle = 'Contacts info check';
+  $min_length = 3;
+  $name = $_GET['name'];
+  $mail = $_GET['mail'];
+  $age = $_GET['age'];
+  /*Using & to concatenate them:
+   http://localhost:8888/boolean/php-snacks-blocco-1/php-snack2/index.php?name=NAME&mail=MAIL&age=NUM
+  */
  ?>
 
 <!-- ............................. HTML ............................. -->
@@ -41,8 +48,34 @@
         <div class="row">
           <div id="results">
             <h3>Results</h3>
-            <p>some text</p>
-            <!-- Here the results will be printed -->
+            <p>
+              User:
+              <span class="user-name">
+                <?php
+                echo $name;
+                ?>
+              </span>
+            </p>
+            <p>
+              Name length:
+              <span>
+                <?php
+                echo(strlen($name));
+                ?>
+              </span>
+            </p>
+            <div class="results-box">
+              <p>
+                <?php
+                // Checking that 'name' is longer than 'min_length' characters
+                if(strlen($name) > $min_length) {
+                  echo('Accesso riuscito');
+                } else {
+                  echo('Accesso negato');
+                }
+                ?>
+              </p>
+            </div>
           </div>
         </div>
       </div>  <!-- End of container -->

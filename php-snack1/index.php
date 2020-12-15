@@ -91,7 +91,7 @@
                 ?>
               </span>
             </p>
-            <div class="matches-list">
+            <div class="results-box">
               <?php
               // Scanning the array of matches to print on screen the values of its keys
                 for($i = 0; $i < count($matches); $i++) {
