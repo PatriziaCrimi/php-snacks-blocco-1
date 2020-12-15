@@ -18,6 +18,14 @@
   /*Using & to concatenate them:
    http://localhost:8888/boolean/php-snacks-blocco-1/php-snack2/index.php?name=NAME&mail=MAIL&age=NUM
   */
+
+  // Checking that 'age' is a valid number (string is considered zero due to intval() function)
+  $is_age;
+  if($age === 0) {
+    $is_age = false;
+  } else {
+    $is_age = true;
+  }
  ?>
 
 <!-- ............................. HTML ............................. -->
@@ -89,7 +97,7 @@
                 and that 'mail' contains both the dot '.' and the at '@' characters
                 and that 'age' is a number.
                 */
-                if(strlen($name) > $min_length && strpos($mail, '.') !== false && strpos($mail, '@') !== false && is_int($age)) {
+                if(strlen($name) > $min_length && strpos($mail, '.') !== false && strpos($mail, '@') !== false && ($is_age)) {
                   echo('Accesso riuscito');
                 } else {
                   echo('Accesso negato');
