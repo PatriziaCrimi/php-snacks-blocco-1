@@ -19,36 +19,38 @@
   $visiting_team = 'visiting team';
   $home_team_score = 'home team score';
   $visiting_team_score = 'visiting team score';
+  $min_score = 20;
+  $max_score = 100;
   $matches = [
     [
       $home_team => 'Los Angeles Lakers',
       $visiting_team => 'Golden State Warriors',
-      $home_team_score => 50,
-      $visiting_team_score => 60,
+      $home_team_score => rand($min_score, $max_score),
+      $visiting_team_score => rand($min_score, $max_score),
     ],
     [
       $home_team => 'Chicago Bulls',
       $visiting_team => 'Milwaukee Bucks',
-      $home_team_score => 80,
-      $visiting_team_score => 65,
+      $home_team_score => rand($min_score, $max_score),
+      $visiting_team_score => rand($min_score, $max_score),
     ],
     [
       $home_team => 'Toronto Raptors',
       $visiting_team => 'Boston Celtics',
-      $home_team_score => 40,
-      $visiting_team_score => 58,
+      $home_team_score => rand($min_score, $max_score),
+      $visiting_team_score => rand($min_score, $max_score),
     ],
     [
       $home_team => 'Houston Rockets',
       $visiting_team => 'Miami Heat',
-      $home_team_score => 72,
-      $visiting_team_score => 34,
+      $home_team_score => rand($min_score, $max_score),
+      $visiting_team_score => rand($min_score, $max_score),
     ],
     [
       $home_team => 'Los Angeles Clippers',
       $visiting_team => 'Denver Nuggets',
-      $home_team_score => 48,
-      $visiting_team_score => 66,
+      $home_team_score => rand($min_score, $max_score),
+      $visiting_team_score => rand($min_score, $max_score),
     ],
   ];
  ?>
@@ -89,23 +91,17 @@
                 ?>
               </span>
             </p>
-            <p>
+            <div class="matches-list">
               <?php
+              // Scanning the array of matches to print on screen the values of its keys
                 for($i = 0; $i < count($matches); $i++) {
-                  var_dump($matches[$i]);
+                  echo("<p>");
+                  echo($matches[$i][$home_team] . ' - ' . $matches[$i][$visiting_team] . ' / ' . $matches[$i][$home_team_score] . ' - ' . $matches[$i][$visiting_team_score]);
+                  // Creating a new line for any new match printed
+                  echo("</p>");
                 };
               ?>
-            </p>
-            <p>
-              <?php
-                for($i = 0; $i < count($matches); $i++) {
-                  var_dump($matches[$i][$home_team]);
-                  var_dump($matches[$i][$visiting_team]);
-                  var_dump($matches[$i][$home_team_score]);
-                  var_dump($matches[$i][$visiting_team_score]);
-                };
-              ?>
-            </p>
+            </div>
           </div>
         </div>
       </div>  <!-- End of container -->
