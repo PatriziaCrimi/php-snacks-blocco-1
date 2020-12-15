@@ -14,7 +14,7 @@
   $min_length = 3;
   $name = $_GET['name'];
   $mail = $_GET['mail'];
-  $age = $_GET['age'];
+  $age = intval($_GET['age']);
   /*Using & to concatenate them:
    http://localhost:8888/boolean/php-snacks-blocco-1/php-snack2/index.php?name=NAME&mail=MAIL&age=NUM
   */
@@ -48,19 +48,21 @@
         <div class="row">
           <div id="results">
             <h3>Results</h3>
+            <div class="clear-fix">
+              <small>
+                Name length:
+                <span>
+                  <?php
+                  echo(strlen($name));
+                  ?>
+                </span>
+              </small>
+            </div>
             <p>
               User:
               <span class="bold">
                 <?php
                 echo $name;
-                ?>
-              </span>
-            </p>
-            <p>
-              Name length:
-              <span>
-                <?php
-                echo(strlen($name));
                 ?>
               </span>
             </p>
@@ -72,11 +74,22 @@
                 ?>
               </span>
             </p>
+            <p>
+              Age:
+              <span class="bold">
+                <?php
+                echo $age;
+                ?>
+              </span>
+            </p>
             <div class="results-box">
               <span>
                 <?php
-                // Checking that 'name' is longer than 'min_length' characters
-                if(strlen($name) > $min_length && strpos($mail, '.') !== false && strpos($mail, '@') !== false) {
+                /* Checking that 'name' is longer than 'min_length' characters
+                and that 'mail' contains both the dot '.' and the at '@' characters
+                and that 'age' is a number.
+                */
+                if(strlen($name) > $min_length && strpos($mail, '.') !== false && strpos($mail, '@') !== false && is_int($age)) {
                   echo('Accesso riuscito');
                 } else {
                   echo('Accesso negato');

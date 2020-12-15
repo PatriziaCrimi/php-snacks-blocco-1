@@ -51,6 +51,10 @@ span {
   text-shadow: 2px 2px black;
 }
 
+small {
+  font-size: 16px;
+}
+
 .container {
   margin: 0 auto;
 }
@@ -85,6 +89,17 @@ h1::after {
   font-family: "Font Awesome 5 Free";
   font-weight: 700;
   font-size: 40px;
+}
+
+#results .clear-fix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+#results small {
+  float: right;
+  margin-right: 15%;
 }
 
 #results span.bold {
