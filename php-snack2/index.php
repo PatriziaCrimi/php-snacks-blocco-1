@@ -9,6 +9,8 @@
   Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”.
   */
 
+  // -------------- Initialization of Variables --------------
+
   $title = 'PHP Snacks';
   $subtitle = 'Contacts info check';
   $min_length = 3;
@@ -19,14 +21,44 @@
    http://localhost:8888/boolean/php-snacks-blocco-1/php-snack2/index.php?name=NAME&mail=MAIL&age=NUM
   */
 
-  // Checking that 'age' is a valid number (string is considered zero due to intval() function)
-  $is_age;
-  if($age === 0) {
-    $is_age = false;
-  } else {
-    $is_age = true;
+  // -------------- Checking credentials criteria for access --------------
+
+  $is_credentials_valid = false;
+  if(isValidName($name, $min_length) && isValidMail($mail) && isValidAge($age)) {
+    $is_credentials_valid = true;
+  };
+
+  // ------------------------ FUNCTIONS ------------------------
+
+  // Checking that 'name' is longer than 'min_length'
+  function isValidName($input_name, $length) {
+    $is_name = false;
+    if(strlen($input_name) > $length) {
+      $is_name = true;
+    };
+    return $is_name;
   }
- ?>
+
+  // Checking that 'mail' contains both the dot '.' and the at '@' characters
+  function isValidMail($input_mail) {
+    $is_mail = false;
+    if (strpos($input_mail, '.') !== false && strpos($input_mail, '@') !== false) {
+      $is_mail = true;
+    };
+    return $is_mail;
+  }
+
+  // Checking that 'age' is a valid number (string is considered zero due to intval() function)
+  function isValidAge($input_age) {
+    $is_age;
+    if($input_age === 0 || $input_age < 0) {
+      $is_age = false;
+    } else {
+      $is_age = true;
+    };
+    return $is_age;
+  }
+?>
 
 <!-- ............................. HTML ............................. -->
 <!DOCTYPE html>
@@ -93,15 +125,11 @@
             <div class="results-box">
               <span>
                 <?php
-                /* Checking that 'name' is longer than 'min_length' characters
-                and that 'mail' contains both the dot '.' and the at '@' characters
-                and that 'age' is a number.
-                */
-                if(strlen($name) > $min_length && strpos($mail, '.') !== false && strpos($mail, '@') !== false && ($is_age)) {
-                  echo('Accesso riuscito');
-                } else {
-                  echo('Accesso negato');
-                }
+                  if ($is_credentials_valid) {
+                    echo('Accesso riuscito');
+                  } else {
+                    echo('Accesso negato');
+                  };
                 ?>
               </span>
             </div>
