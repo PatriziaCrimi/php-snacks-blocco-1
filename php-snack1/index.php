@@ -92,7 +92,9 @@
               </span>
             </p>
             <div class="results-box">
+              <!-- ***SOLUTION 1*** - Using ECHO to create HTML elements and new lines -->
               <?php
+              /*
               // Scanning the array of matches to print on screen the values of its keys
                 for($i = 0; $i < count($matches); $i++) {
                   echo("<p>");
@@ -100,7 +102,21 @@
                   // Creating a new line for any new match printed
                   echo("</p>");
                 };
+                */
               ?>
+
+              <!-- ***SOLUTION 2*** - Opening and closing PHP to create HTML elements and new lines -->
+              <?php
+              // Scanning the array of matches to print on screen the values of its keys
+                for($i = 0; $i < count($matches); $i++) { ?>
+                  <!-- Creating a new line for any new match printed -->
+                  <p>
+                    <?php
+                      echo($matches[$i][$home_team] . ' - ' . $matches[$i][$visiting_team] . ' / ' . $matches[$i][$home_team_score] . ' - ' . $matches[$i][$visiting_team_score]);
+                    ?>
+                  </p>
+                  <?php
+                }; ?>
             </div>
           </div>
         </div>
